@@ -10,6 +10,9 @@ function userDetail() {
   localStorage.setItem("emailKey", email);
   localStorage.setItem("numberKey", number);
   localStorage.setItem("codeKey", code);
+  webengage.user.login(email);
+  webengage.user.setAttribute('we_email', email);
+  webengage.user.setAttribute('we_phone', number);
 
   if (!email.includes("@") || !email.includes(".com") || email.length < 8) {
     alert("You have entered an invalid email address");
